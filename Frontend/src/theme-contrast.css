@@ -1,0 +1,157 @@
+:root {
+  --progress-background: #d5e1dd;
+  --progress-fill: #2f7d68;
+  --text-primary-contrast: #17352d;
+  --text-secondary-contrast: #55736a;
+  --border-contrast: #c9d8d3;
+}
+
+html[data-theme="dark"] {
+  --progress-background: #34463d;
+  --progress-fill: #64cf98;
+  --text-primary-contrast: #edf5ef;
+  --text-secondary-contrast: #a5b5aa;
+  --border-contrast: #35473e;
+}
+
+body {
+  color: var(--text-primary-contrast);
+}
+
+.progress {
+  background: var(--progress-background);
+  opacity: 1;
+}
+
+.progress > span {
+  background: var(--progress-fill);
+  opacity: 1;
+}
+
+.challenge .progress {
+  background: #467b69;
+}
+
+.challenge .progress > span {
+  background: #9be3b7;
+}
+
+/* The challenge card is a light surface in light mode, so its child text must
+   not inherit the white text used by the dark challenge treatment. */
+html:not([data-theme="dark"]) .challenge .panel-label {
+  color: var(--primary);
+}
+
+html:not([data-theme="dark"]) .challenge .challenge-row strong,
+html:not([data-theme="dark"]) .challenge .progress-ring,
+html:not([data-theme="dark"]) .challenge-meta strong,
+html:not([data-theme="dark"]) .challenge-streaks b {
+  color: var(--text-primary-contrast);
+}
+
+html:not([data-theme="dark"]) .challenge .challenge-row span,
+html:not([data-theme="dark"]) .challenge-meta,
+html:not([data-theme="dark"]) .challenge-streaks,
+html:not([data-theme="dark"]) .challenge > p {
+  color: var(--text-secondary-contrast);
+}
+
+html[data-theme="dark"] .challenge .challenge-row strong,
+html[data-theme="dark"] .challenge .challenge-row span,
+html[data-theme="dark"] .challenge .progress-ring,
+html[data-theme="dark"] .challenge-meta strong,
+html[data-theme="dark"] .challenge-streaks b {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .challenge-meta,
+html[data-theme="dark"] .challenge-streaks,
+html[data-theme="dark"] .challenge > p {
+  color: #d4ecdf;
+}
+
+.progress-card .mint,
+.report-progress > span,
+.week-row .progress > span {
+  background: var(--progress-fill);
+}
+
+h1,
+h2,
+h3,
+.big-number,
+.habit-main h3,
+.detail strong,
+.report-section > h3 {
+  color: var(--text-primary-contrast);
+}
+
+.eyebrow,
+.panel-label,
+.habit-main p,
+.streak small,
+.detail span,
+.report-metric span,
+.report-subtitle,
+.performance-stats,
+.week-row small,
+.muted {
+  color: var(--text-secondary-contrast);
+}
+
+.panel,
+.habit,
+.report-metric,
+.performance-card,
+.detail,
+.recent-list > div,
+.profile-banner,
+.empty,
+.modal,
+.search,
+.theme-toggle,
+.notification-button,
+.filter {
+  border-color: var(--border-contrast);
+}
+
+.search input,
+label input,
+label select {
+  background: var(--surface-secondary);
+  border-color: var(--border-contrast);
+  color: var(--text-primary-contrast);
+}
+
+.search input::placeholder {
+  color: var(--text-secondary-contrast);
+  opacity: 1;
+}
+
+.icon-button,
+.notification-button,
+.theme-toggle {
+  color: var(--text-primary-contrast);
+}
+
+.habit.completed {
+  background: #e0f2e7;
+  border-color: #76b994;
+}
+
+html[data-theme="dark"] .habit.completed {
+  background: #1c382b;
+  border-color: #397653;
+}
+
+html[data-theme="dark"] .progress-card .mint,
+html[data-theme="dark"] .report-progress > span,
+html[data-theme="dark"] .week-row .progress > span {
+  background: #64cf98;
+}
+
+@media (max-width: 640px) {
+  .challenge-streaks {
+    grid-template-columns: 1fr 1fr;
+  }
+}

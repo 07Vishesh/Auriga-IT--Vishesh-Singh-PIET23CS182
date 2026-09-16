@@ -1,0 +1,10 @@
+const assert = require('node:assert/strict');
+const { getCurrentStreak, getBestStreak } = require('./streak');
+const habit = { scheduleType: 'daily', scheduledDays: [] };
+const weekdayHabit = { scheduleType: 'weekdays', scheduledDays: [1, 3, 5] };
+assert.equal(getCurrentStreak(habit, ['2026-09-14', '2026-09-15', '2026-09-16'], new Date('2026-09-16T12:00:00')), 3);
+assert.equal(getBestStreak(habit, ['2026-09-12', '2026-09-13', '2026-09-14', '2026-09-16']), 3);
+assert.equal(getCurrentStreak(weekdayHabit, ['2026-09-14', '2026-09-16'], new Date('2026-09-16T12:00:00')), 2);
+assert.equal(getBestStreak(weekdayHabit, ['2026-09-14', '2026-09-16', '2026-09-18']), 3);
+assert.equal(getCurrentStreak(habit, ['2026-09-15'], new Date('2026-09-16T12:00:00')), 1);
+console.log('streak utility tests passed');
